@@ -1,5 +1,5 @@
 ################################################################################
-# RUNS BAYESIAN QBA FOR THE APPLIED EXAMPLE
+# RUNS BAYESIAN QBA FOR THE NHANES EXAMPLE
 
 # A. Preliminaries
 # loads necessary packages and functions
