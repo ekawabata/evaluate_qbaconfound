@@ -1,5 +1,5 @@
 ################################################################################
-# GENERATES DATA FOR THE APPLIED EXAMPLE
+# GENERATES DATA FOR THE NHANES EXAMPLE
 
 # A. Preliminaries
 # loads necessary packages and functions
