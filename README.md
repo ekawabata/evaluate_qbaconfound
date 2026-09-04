@@ -4,9 +4,9 @@ described in the following paper:
 **A flexible Monte Carlo quantitative bias analysis for unmeasured confounding**
 
 It includes scripts to simulate datasets and then analyse these datasets for the
-simulation study ([Simulation%20study/](./Simulation%20study/) corresponding to
+simulation study ([Simulation study/](./Simulation%20study/) corresponding to
 Section 3 in the paper), and scripts to download and clean data, and analyse it
-for the applied example ([AppliedExample/](./Applied%20example/) corresponding
+for the applied example ([Applied example/](./Applied%20example/) corresponding
 to Section 4 in the paper). It also contains [Bayesian
 function/](./Bayesian%20function/) which contains a modified function of the
 *unm_glm* function of R package *unmconf*.
@@ -16,7 +16,7 @@ The structure of the repository follows as:
 - [**Simulation study/**](./Simulation%20Study/)
 
   - [Master do file for running Monte Carlo QBA in simulation studies I to
-    IV.do](./Simulation%20study/Master do file for running Monte Carlo QBA in simulation studies I to IV.do):
+    IV.do](./Simulation%20study/Master%20do%20file%20for%20running%20Monte%20Carlo%20QBA%20in%20simulation%20studies%20I%20to%20IV.do):
     Master do file for running simulation studies I to IV for Monte Carlo QBA.
     Runs do files from folder "Do files" and post results to a folder called
     "Results".
