@@ -13,6 +13,8 @@ function/](./Bayesian function/) which contains a modified function of the
 
 The structure of the repository follows as:
 
+- [**Testing/**](./Testing/)
+
 - [**Simulation study/**](./Simulation study/)
 
   - [Master do file for running Monte Carlo QBA in simulation studies I to
