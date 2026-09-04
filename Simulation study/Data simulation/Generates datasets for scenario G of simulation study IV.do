@@ -14,7 +14,7 @@
 * Before running to do-file:
 	* Install user-written command survsim. 
 	* Provide file path (working directory) for location of saved datasets - update line 26 
-		* Datasets are saved in a folder called ystxcon. This must not already exist in the working directory
+		* Datasets are saved in a folder called Data. This must not already exist in the working directory
 
 * David Carslake, July 2025
 ****************************************************************************************************************

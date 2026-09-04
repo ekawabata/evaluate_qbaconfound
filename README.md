@@ -34,8 +34,8 @@ The structure of the repository follows as:
     - [Generates datasets for scenario G of simulation study
       IV.do](./Simulation study/Data simulation/Generates datasets for scenario G of simulation study IV.do):
       Generates 500 simulated datasets for scenario G of simulation study IV and
-      saves in [Simulation study IV/Scenario
-      G/Data/](./Simulation study/Simulation study IV/Scenario G/Data/).
+      saves in [Simulation study
+      IV/Data/](./Simulation study/Simulation study IV/Data/).
 
     - [Scenario A - simulates a
       dataset.do](./Simulation study/Data simulation/Scenario
@@ -266,19 +266,16 @@ The structure of the repository follows as:
   - [MyUnm_glm.R](./Bayesian function/MyUnm_glm.R): modified *unm_glm* function
     from R package *unmconf* 1.0.0 for running Bayesian QBA
 
-## Further information
-
-This repository accompanies the paper:
+## Publications
 
 Emily Kawabata, Chin Yang Shapland, Tom Palmer, David Carslake, Kate Tilling,
-Rachael Hughes
-
-**A flexible Monte Carlo quantitative bias analysis for unmeasured confounding**
-
-Statistical Methods in Medical Research (accepted in 2026)
+Rachael Hughes. A flexible Monte Carlo quantitative bias analysis for unmeasured
+confounding. Statistical Methods in Medical Research (accepted in 2026).
 
 See also:
 [https://www.medrxiv.org/content/10.1101/2025.08.12.25333217v1](https://www.medrxiv.org/content/10.1101/2025.08.12.25333217v1)
+
+## Further information
 
 If you would like any further information, please contact
 emily.kawabata@bristol.ac.uk.

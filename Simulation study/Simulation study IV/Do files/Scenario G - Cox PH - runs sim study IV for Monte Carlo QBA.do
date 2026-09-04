@@ -101,7 +101,7 @@ quietly {
 	local state = c(rngstate)
 	
 	* IMPORT DATASET
-	import delimited "Simulation study IV\yst_xcon\Dataset_`dataset'.csv", clear
+	import delimited "Simulation study IV\Data\Dataset_`dataset'.csv", clear
 	
 	* GENERATE DUMMY VARIABLES OF cnom FOR ANALYSIS
 	xi i.cnom
