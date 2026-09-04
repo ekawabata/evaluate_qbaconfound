@@ -23,34 +23,34 @@ The structure of the repository follows as:
 
   - [**Data simulation/**](./Simulation%20study/Data%20simulation/)
     - [Generates datasets for scenarios A and B of simulation study
-      I.do](./Simulation%20study/Data%20simulation/Generates datasets for scenarios A and B of simulation study I.do):
+      I.do](./Simulation%20study/Data%20simulation/Generates%20datasets%20for%20scenarios%20A%20and%20B%20of%20simulation%20study%20I.do):
       Generates 500 simulated datasets for scenarios A and B of simulation study
       I and saves in [Simulation study I/Scenario
-      A/Data/](./Simulation%20study/Simulation study I/Scenario A/Data/) and
-      [Simulation study I/Scenario
-      B/Data/](./Simulation%20study/Simulation study I/Scenario B/Data/)
+      A/Data/](./Simulation%20study/Simulation%20study%20I/Scenario%20A/Data/)
+      and [Simulation study I/Scenario
+      B/Data/](./Simulation%20study/Simulation%20study%20I/Scenario%20B/Data/)
       respectively.
 
     - [Generates datasets for scenario G of simulation study
-      IV.do](./Simulation%20study/Data%20simulation/Generates datasets for scenario G of simulation study IV.do):
+      IV.do](./Simulation%20study/Data%20simulation/Generates%20datasets%20for%20scenario%20G%20of%20simulation%20study%20IV.do):
       Generates 500 simulated datasets for scenario G of simulation study IV and
       saves in [Simulation study
-      IV/Data/](./Simulation%20study/Simulation study IV/Data/).
+      IV/Data/](./Simulation%20study/Simulation%20study%20IV/Data/).
 
     - [Scenario A - simulates a
-      dataset.do](./Simulation%20study/Data%20simulation/Scenario A - simulates a dataset.do):
+      dataset.do](./Simulation%20study/Data%20simulation/Scenario%20A%20-%20simulates%20a%20dataset.do):
       Simulates a single dataset for scenario A of simulation studies I, II and VI.
 
     - [Scenario B - simulates a
-      dataset.do](./Simulation%20study/Data%20simulation/Scenario B - simulates a dataset.do):
+      dataset.do](./Simulation%20study/Data%20simulation/Scenario%20B%20-%20simulates%20a%20dataset.do):
       Simulates a single dataset for scenario B of simulation studies I, II and VI.
 
     - [Scenario C - simulates a
-      dataset.do](./Simulation%20study/Data%20simulation/Scenario C - simulates a dataset.do):
+      dataset.do](./Simulation%20study/Data%20simulation/Scenario%20C%20-%20simulates%20a%20dataset.do):
       Simulates a single dataset for scenario C of simulation study III.
 
     - [Scenario D - simulates a
-      dataset.do](./Simulation%20study/Data%20simulation/Scenario D - simulates a dataset.do):
+      dataset.do](./Simulation%20study/Data%20simulation/Scenario%20D%20-%20simulates%20a%20dataset.do):
       Simulates a single dataset for scenario D of simulation study III.
 
     - [Scenario E - simulates a
