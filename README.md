@@ -1,142 +1,284 @@
 This repository contains the scripts needed to perform the main analyses
-described in the associated paper ("qbaconfound: A flexible Monte Carlo
-probabilistic bias analysis to unmeasured confounding" submitted to Statistical
-Methods in Medical Research). It includes scripts to simulate datasets and then
-analyse these datasets for the simulation study ("Simulation study" folder
-corresponding to Section 3 in the paper), and scripts to download and clean
-data, and analyse it for the applied example ("Applied example" folder
-corresponding to Section 4 in the paper). It also contains "Bayesian function"
-which contains a modified function of the *unm_glm* function of R package
-*unmconf*.
+described in the following paper:
+
+**A flexible Monte Carlo quantitative bias analysis for unmeasured confounding**
+
+It includes scripts to simulate datasets and then analyse these datasets for the
+simulation study ([Simulation study/](./Simulation study/) corresponding to
+Section 3 in the paper), and scripts to download and clean data, and analyse it
+for the applied example ([Applied example/](./Applied example/) corresponding to
+Section 4 in the paper). It also contains [Bayesian
+function/](./Bayesian function/) which contains a modified function of the
+*unm_glm* function of R package *unmconf*.
 
 The structure of the repository follows as:
 
-- Simulation study
-  - Data simulation
-    - Generates datasets for scenarios A and B of simulation study I.do:
-      generates 500 simulated datasets for scenarios A and B of simulation study I.
-      Datasets are saved in a folder called "Data" on pathway "Simulation study
-      I/Scenario A/" or "Simulation study I/Scenario B/"
-    - Generates datasets for scenario G of simulation study IV.do: generates 500
-      simulated datasets for scenario G of simulation study IV. Datasets are
-      saved in a folder called "Data" on pathway "Simulation study IV/yst_xcon/"
-    - Scenario A - simulates a dataset.do: simulates a single dataset for
-      scenario A of simulation studies I and II
-    - Scenario B - simulates a dataset.do: simulates a single dataset for
-      scenario B of simulation studies I and II
-    - Scenario C - simulates a dataset.do: simulates a single dataset for
-      scenario C of simulation study III
-    - Scenario D - simulates a dataset.do: simulates a single dataset for
-      scenario D of simulation study III
-    - Scenario E - simulates a dataset.do: simulates a single dataset for
-      scenario E of simulation study IV
-    - Scenario F - simulates a dataset.do: simulates a single dataset for
-      scenario F of simulation study IV
+- [**Simulation study/**](./Simulation study/)
 
-  - Fits MCQBA
-    - Scenario A - fits MCQBA.do: applies a Monte Carlo QBA to data with a
-      binary outcome and continuous unmeasured confounder (scenario A)
-    - Scenario B - fits MCQBA.do: applies a Monte Carlo QBA to data with a
-      continuous and two continuous unmeasured confounders (scenario B)
-    - Scenario C - fits MCQBA.do: applies a Monte Carlo QBA to data with a
-      binary outcome and binary unmeasured confounder (scenario C)
-    - Scenario D - fits MCQBA.do: applies a Monte Carlo QBA to data with a
-      continuous outcome and two binary unmeasured confounder (scenario D)
-    - Scenario E - fits MCQBA.do: applies a Monte Carlo QBA to data with a
-      continuous outcome and binary and continuous unmeasured confounders
-      (scenario E)
-    - Scenario F - fits MCQBA.do: applies a Monte Carlo QBA to data with a
-      nominal outcome and continuous unmeasured confounder (scenario F)
-    - Scenario G - fits MCQBA.do: applies a Monte Carlo QBA to data with a
-      survival outcome and continuous unmeasured confounder (scenario G)
+  - [Master do file for running Monte Carlo QBA in simulation studies I to
+    IV.do](./Simulation study/Master do file for running Monte Carlo QBA in simulation studies I to IV.do):
+    Master do file for running simulation studies I to IV for Monte Carlo QBA.
+    Runs do files from folder "Do files" and post results to a folder called
+    "Results".
 
-  - Simulation study I
-    - Scenario A
-      - Data
-        - 500 CSV files from Dataset_1.csv to Dataset_500.csv of the simulated
-          datasets for scenario A of simulation study I
-      - Monte Carlo
-        - Do files
-          - Scenario A - logit - runs sim study I for Monte Carlo QBA.do: runs
-            simulation study I for Monte Carlo QBA for scenario A
-        - Results
-          - Empty folder to store the results from running the above do file
-      - Bayesian
-        - Seeds
-          - Generates random integers.do: generates 8,000 random integers for
-            seeds
-          - RandomIntegers.csv: lists 8,000 random integers
-        - R files
-          - ScenarioA-glm-RunsSimStudyIforBayesianQBA.R: runs simulation study I
-            for Bayesian QBA for scenario A
-        - Results
-          - Empty folder to store the results from running the above R file
-    - Scenario B
-      - Data
-        - 500 CSV files from Dataset_1.csv to Dataset_500.csv of the simulated
-          datasets for scenario B of simulation study I
-      - Monte Carlo
-        - Do files
-          - Scenario B - regress - runs sim study I for Monte Carlo QBA.do: runs
-            simulation study I for Monte Carlo QBA for scenario B
-        - Results
-          - Empty folder to store the results from running the above do file
-      - Bayesian
-        - Seeds
-          - Generates random integers.do: generates 8,000 random integers for
-            seeds
-          - RandomIntegers.csv: lists 8,000 random integers
-        - R files
-          - ScenarioB-lm-RunsSimStudyIforBayesianQBA.R: runs simulation study I
-            for Bayesian QBA for scenario B
-        - Results
-          - Empty folder to store the results from running the above R file
+  - [**Data simulation/**](./Simulation study/Data simulation/)
+    - [Generates datasets for scenarios A and B of simulation study
+      I.do](./Simulation study/Data simulation/Generates datasets for scenarios A and B of simulation study I.do):
+      Generates 500 simulated datasets for scenarios A and B of simulation study
+      I and saves in [Simulation study I/Scenario
+      A/Data/](./Simulation study/Simulation study I/Scenario A/Data/) and
+      [Simulation study I/Scenario
+      B/Data/](./Simulation study/Simulation study I/Scenario B/Data/)
+      respectively.
 
-  - Simulation study II
-    - Do files
-      - Scenario A - logit - runs sim study II for Monte Carlo QBA.do: runs
-        simulation study II for Bayesian QBA for scenario A
-      - Scenario B - regress - runs sim study II for Monte Carlo QBA.do: runs
-        simulation study II for Bayesian QBA for scenario B
-    - Results
-      - Empty folder to store the results from running the above do files
+    - [Generates datasets for scenario G of simulation study
+      IV.do](./Simulation study/Data simulation/Generates datasets for scenario G of simulation study IV.do):
+      Generates 500 simulated datasets for scenario G of simulation study IV and
+      saves in [Simulation study IV/Scenario
+      G/Data/](./Simulation study/Simulation study IV/Scenario G/Data/).
 
-  - Simulation study III
-    - Do files
-      - Scenario C - logit - runs sim study III for Monte Carlo QBA.do: runs
-        simulation study III for Bayesian QBA for scenario C
-      - Scenario D - regress - runs sim study III for Monte Carlo QBA.do: runs
-        simulation study III for Bayesian QBA for scenario D
-    - Results
-      - Empty folder to store the results from running the above do files
+    - [Scenario A - simulates a
+      dataset.do](./Simulation study/Data simulation/Scenario
+      A - simulates a dataset.do):
+      Simulates a single dataset for scenario A of simulation studies I, II and VI.
 
-  - Simulation study IV
-    - yst_xcon
-      - 500 CSV files from Dataset_1.csv to Dataset_500.csv of the simulated
-        datasets for scenario G of simulation study IV
-    - Do files
-      - Scenario E - regress - runs sim study IV for Monte Carlo QBA.do: runs
-        simulation study IV for Bayesian QBA for scenario E
-      - Scenario F - mlogit - runs sim study IV for Monte Carlo QBA.do: runs
-        simulation study IV for Bayesian QBA for scenario F
-      - Scenario G - Cox PH - runs sim study IV for Monte Carlo QBA.do: runs
-        simulation study IV for Bayesian QBA for scenario G
-    - Results
-      - Empty folder to store the results from running the above do files
+    - [Scenario B - simulates a
+      dataset.do](./Simulation study/Data simulation/Scenario
+      B - simulates a dataset.do):
+      Simulates a single dataset for scenario B of simulation studies I, II and VI.
 
-- Applied example
-  - GeneratesDataForNHANESExample.R: generates data for the NHANES example
-  - Data
-    - Data.csv: cleaned NHANES data for analysis
-  - Monte Carlo
-    - Apply MCQBA to NHANES example using prior for piM.do: runs Monte Carlo QBA
-      with a prior distribution for the marginal prevalence
-    - Apply MCQBA to NHANES example using prior for the intercept.do: runs Monte
-      Carlo QBA with a prior distribution for the intercept of logistic
-      regression
-  - Bayesian
-    - ApplyBayesianQBAToNHANESExample.R: runs Bayesian QBA
+    - [Scenario C - simulates a
+      dataset.do](./Simulation study/Data simulation/Scenario
+      C - simulates a dataset.do):
+      Simulates a single dataset for scenario C of simulation study III.
 
-- Bayesian function
-  - MyUnm_glm.R: modified *unm_glm* function from R package *unmconf* 1.0.0 for
-    running Bayesian QBA
+    - [Scenario D - simulates a
+      dataset.do](./Simulation study/Data simulation/Scenario
+      D - simulates a dataset.do):
+      Simulates a single dataset for scenario D of simulation study III.
+
+    - [Scenario E - simulates a
+      dataset.do](./Simulation study/Data simulation/Scenario
+      E - simulates a dataset.do):
+      Simulates a single dataset for scenario E of simulation study IV.
+
+    - [Scenario F - simulates a
+      dataset.do](./Simulation study/Data simulation/Scenario F - simulates a dataset.do):
+      Simulates a single dataset for scenario F of simulation study IV.
+
+  - [**Fits MCQBA/**](./Simulation study/Fits MCQBA/)
+    - [Scenario A - fits
+      MCQBA.do](./Simulation study/Fits MCQBA/Scenario A - fits MCQBA.do):
+      Applies Monte Carlo QBA to data with a binary outcome and continuous
+      unmeasured confounder (scenario A).
+
+    - [Scenario B - fits
+      MCQBA.do](./Simulation study/Fits MCQBA/Scenario
+      B - fits MCQBA.do):
+      Applies Monte Carlo QBA to data with a continuous and two continuous
+      unmeasured confounders (scenario B).
+
+    - [Scenario C - fits
+      MCQBA.do](./Simulation study/Fits MCQBA/Scenario
+      C - fits MCQBA.do):
+      Applies Monte Carlo QBA to data with a binary outcome and binary
+      unmeasured confounder (scenario C).
+
+    - [Scenario D - fits
+      MCQBA.do](./Simulation study/Fits MCQBA/Scenario
+      D - fits MCQBA.do):
+      Applies Monte Carlo QBA to data with a binary outcome and two binary
+      unmeasured confounder (scenario D).
+
+    - [Scenario E - fits
+      MCQBA.do](./Simulation study/Fits MCQBA/Scenario
+      E - fits MCQBA.do):
+      Applies Monte Carlo QBA to data with a continuous outcome and two
+      unmeasured confounders (one binary and one continuous) (scenario E).
+
+    - [Scenario F - fits
+      MCQBA.do](./Simulation study/Fits MCQBA/Scenario
+      F - fits MCQBA.do):
+      Applies Monte Carlo QBA to data with a nominal outcome and continuous
+      unmeasured confounder (scenario F).
+
+    - [Scenario G - fits
+      MCQBA.do](./Simulation study/Fits MCQBA/Scenario G - fits MCQBA.do):
+      Applies Monte Carlo QBA to data with a survival outcome and continuous
+      unmeasured confounder (scenario G).
+
+  - [**Simulation study I/**](./Simulation study/Simulation study I/)
+    - [**Scenario A/**](./Simulation study/Simulation study I/Scenario A)
+      - [**Data/**](./Simulation study/Simulation study I/Scenario A/Data/)
+        - 500 csv files from
+          [Dataset_1.csv](./Simulation study/Simulation study I/Scenario A/Data/Dataset_1.csv)
+          to
+          [Dataset_500.csv](./Simulation study/Simulation study I/Scenario A/Data/Dataset_500.csv)
+          of the simulated datasets for scenario A of simulation studies I, II
+          and VI
+      - [**Monte
+        Carlo/**](./Simulation study/Simulation study I/Scenario A/Monte Carlo/)
+        - [**Do
+          files/**](./Simulation study/Simulation study I/Scenario A/Monte Carlo/Do files/)
+          - [Scenario A - logit - runs sim study I for Monte Carlo
+            QBA.do](./Simulation study/Simulation study I/Scenario A/Monte Carlo/Do files/Scenario A - logit - runs sim study I for Monte Carlo QBA.do):
+            Runs scenario A of simulation study I for Monte Carlo QBA.
+        - [**Results/**](./Simulation study/Simulation study I/Scenario A/Monte Carlo/Results/)
+          - empty folder to store the results from running the above do file
+      - [**Bayesian/**](./Simulation study/Simulation study I/Scenario A/Bayesian/)
+        - [**Seeds/**](./Simulation study/Simulation study I/Scenario A/Bayesian/Seeds/)
+          - [Generates random
+            integers.do](./Simulation study/Simulation study I/Scenario A/Bayesian/Seeds/Generates random integers.do):
+            Generates 8,000 random integers for seeds.
+          - [RandomIntegers.csv](./Simulation study/Simulation study I/Scenario A/Bayesian/Seeds/RandomIntegers.csv):
+            Lists 8,000 random integers.
+        - [**R
+          files/**](./Simulation study/Simulation study I/Scenario A/Bayesian/R files/)
+          - [ScenarioA-glm-RunsSimStudyIforBayesianQBA.R](./Simulation study/Simulation study I/Scenario A/Bayesian/R files/ScenarioA-glm-RunsSimStudyIforBayesianQBA.R) :
+            Runs scenario A of simulation study I for Bayesian QBA.
+        - [**Results/**](./Simulation study/Simulation study I/Scenario A/Bayesian/Results/)
+          - empty folder to store the results from running the above R file
+    - [**Scenario B/**](./Simulation study/Simulation study I/Scenario B/)
+      - [**Data/**](./Simulation study/Simulation study I/Scenario B/Data/)
+        - 500 csv files from
+          [Dataset_1.csv](./Simulation study/Simulation study I/Scenario B/Data/Dataset_1.csv)
+          to
+          [Dataset_500.csv](./Simulation study/Simulation study I/Scenario B/Data/Dataset_500.csv)
+          of the simulated datasets for scenario B of simulation studies I, II
+          and VI
+      - [**Monte
+        Carlo/**](./Simulation study/Simulation study I/Scenario B/Monte Carlo)
+        - [**Do
+          files/**](./Simulation study/Simulation study I/Scenario B/Monte Carlo/Do files/)
+          - [Scenario B - regress - runs sim study I for Monte Carlo
+            QBA.do](./Simulation study/Simulation study I/Scenario B/Monte Carlo/Do files/Scenario B - regress - runs sim study I for Monte Carlo QBA.do):
+            Runs scenario B of simulation study I for Monte Carlo QBA.
+        - [**Results/**](./Simulation study/Simulation study I/Scenario B/Monte Carlo/Results/)
+          - empty folder to store the results from running the above do file
+      - [**Bayesian/**](./Simulation study/Simulation study I/Scenario B/Bayesian)
+        - [**Seeds/**](./Simulation study/Simulation study I/Scenario B/Bayesian/Seeds/)
+          - [Generates random
+            integers.do](./Simulation study/Simulation study I/Scenario B/Bayesian/Seeds/Generates random integers.do):
+            Generates 8,000 random integers for seeds.
+          - [RandomIntegers.csv](./Simulation study/Simulation study I/Scenario B/Bayesian/Seeds/RandomIntegers.csv):
+            Lists 8,000 random integers.
+        - [**R
+          files/**](./Simulation study/Simulation study I/Scenario B/Bayesian/R files/)
+          - [ScenarioB-lm-RunsSimStudyIforBayesianQBA.R](./Simulation study/Simulation study I/Scenario B/Bayesian/R files/ScenarioB-lm-RunsSimStudyIforBayesianQBA.R):
+            Runs scenario B of simulation study I for Bayesian QBA.
+        - [**Results/**](./Simulation study/Simulation study I/Scenario B/Bayesian/Results/)
+          - empty folder to store the results from running the above R file
+
+  - [**Simulation study II/**](./Simulation study/Simulation study II/)
+    - [**Do files/**](./Simulation study/Simulation study II/Do files/)
+      - [Scenario A - logit - runs sim study II for Monte Carlo
+        QBA.do](./Simulation study/Simulation study II/Do files/Scenario A - logit - runs sim study II for Monte Carlo QBA.do):
+        Runs scenario A of simulation study II for Monte Carlo QBA.
+      - [Scenario B - regress - runs sim study II for Monte Carlo
+        QBA.do](./Simulation study/Simulation study II/Do files/Scenario B - regress - runs sim study II for Monte Carlo QBA.do):
+        Runs scenario B of simulation study II for Monte Carlo QBA.
+    - [**Results/**](./Simulation study/Simulation study II/Results/)
+      - empty folder to store the results from running the above do files
+
+  - [**Simulation study III/**](./Simulation study/Simulation study III/)
+    - [**Do files/**](./Simulation study/Simulation study III/Do files/)
+      - [Scenario C - logit - runs sim study III for Monte Carlo
+        QBA.do](./Simulation study/Simulation study III/Do files/Scenario C - logit - runs sim study III for Monte Carlo QBA.do):
+        Runs scenario C of simulation study III for Monte Carlo QBA.
+      - [Scenario D - regress - runs sim study III for Monte Carlo
+        QBA.do](./Simulation study/Simulation study III/Do files/Scenario D - regress - runs sim study III for Monte Carlo QBA.do):
+        Runs scenario D of simulation study III for Monte Carlo QBA.
+    - [**Results/**](./Simulation study/Simulation study III/Results/)
+      - empty folder to store the results from running the above do files
+
+  - [**Simulation study IV/**](./Simulation study/Simulation study IV/)
+    - [**Data/**](./Simulation study/Simulation study IV/Data/)
+      - 500 csv files from
+        [Dataset_1.csv](./Simulation study/Simulation study IV/Data/Dataset_1.csv)
+        to
+        [Dataset_500.csv](./Simulation study/Simulation study IV/Data/Dataset_500.csv)
+        of the simulated datasets for scenario G of simulation study IV
+    - [**Do files/**](./Simulation study/Simulation study IV/Do files/)
+      - [Scenario E - regress - runs sim study IV for Monte Carlo
+        QBA.do](./Simulation study/Simulation study IV/Do files/Scenario E - regress - runs sim study IV for Monte Carlo QBA.do):
+        Runs scenario E of simulation study IV for Monte Carlo QBA.
+      - [Scenario F - mlogit - runs sim study IV for Monte Carlo
+        QBA.do](./Simulation study/Simulation study IV/Do files/Scenario F - mlogit - runs sim study IV for Monte Carlo QBA.do):
+        Runs scenario F of simulation study IV for Monte Carlo QBA.
+      - [Scenario G - Cox PH - runs sim study IV for Monte Carlo
+        QBA.do](./Simulation study/Simulation study IV/Do files/Scenario G - Cox PH - runs sim study IV for Monte Carlo QBA.do):
+        Runs scenario G of simulation study IV for Monte Carlo QBA.
+    - [**Results/**](./Simulation study/Simulation study IV/Results/)
+      - empty folder to store the results from running the above do files
+
+  - [**Simulation study V/**](./Simulation study/Simulation study V/)
+    - [**Data**](./Simulation study/Simulation study V/Data/)
+      - 500 dta files from
+        [Dataset_1.dta](./Simulation study/Simulation study V/Data/Dataset_1.dta)
+        to
+        [Dataset_500.dta](./Simulation study/Simulation study V/Data/Dataset_500.dta)
+        of the simulated datasets for scenarios A and B of simulation study V
+    - [**Do files/**](./Simulation study/Simulation study V/Do files/)
+      - [Scenario A - logit - runs sim study V for Monte Carlo
+        QBA.do](./Simulation study/Simulation study V/Do files/Scenario A - logit - runs sim study V for Monte Carlo QBA.do):
+        Runs scenario A of simulation study V for Monte Carlo QBA.
+      - [Scenario B - regress - runs sim study V for Monte Carlo
+        QBA.do](./Simulation study/Simulation study V/Do files/Scenario B - regress - runs sim study V for Monte Carlo QBA.do):
+        Runs scenario B of simulation study V for Monte Carlo QBA.
+    - [**Results/**](./Simulation study/Simulation study V/Results/)
+      - empty folder to store the results from running the above do files
+
+  - [**Simulation study VI/**](./Simulation study/Simulation study VI/)
+    - [**Do files/**](./Simulation study/Simulation study VI/Do files/)
+      - [Scenario A - logit - runs sim study VI for Monte Carlo
+        QBA.do](./Simulation study/Simulation study VI/Do files/Scenario A - logit - runs sim study VI for Monte Carlo QBA.do):
+        Runs scenario A of simulation study VI for Monte Carlo QBA.
+      - [Scenario B - regress - runs sim study VI for Monte Carlo
+        QBA.do](./Simulation study/Simulation study VI/Do files/Scenario B - regress - runs sim study VI for Monte Carlo QBA.do):
+        Runs scenario B of simulation study VI for Monte Carlo QBA.
+    - [**Results/**](./Simulation study/Simulation study VI/Results/)
+      - empty folder to store the results from running the above do files
+
+- [**Applied example/**](./Applied example/)
+  - [GeneratesDataForNHANESExample.R](./Applied example/GeneratesDataForNHANESExample.R):
+    Generates data for the NHANES example.
+  - [**Data/**](./Applied example/Data/)
+    - [Data.csv](./Applied example/Data/Data.csv): cleaned NHANES data for
+      analysis
+  - [**Monte Carlo/**](./Applied example/Monte Carlo/)
+    - [Apply MCQBA to NHANES example using prior for
+      piM.do](./Applied example/Monte Carlo/Apply MCQBA to NHANES
+      example using prior for piM.do):
+      Applies Monte Carlo QBA with a prior distribution for the marginal
+      prevalence.
+    - [Apply MCQBA to NHANES example using prior for the
+      intercept.do](./Applied example/Monte Carlo/Apply MCQBA to NHANES example using prior for the intercept.do):
+      Applies Monte Carlo QBA with a prior distribution for the intercept of
+      logistic regression.
+    - [Apply MCQBA to NHANES example using inaccurate
+      priors.do](./Applied example/Monte Carlo/Apply MCQBA to NHANES example using inaccurate priors.do):
+      Applies Monte Carlo QBA using inaccurate priors.
+  - [**Bayesian/**](./Applied example/Bayesian/)
+    - [ApplyBayesianQBAToNHANESExample.R](./Applied example/Bayesian/ApplyBayesianQBAToNHANESExample.R):
+      Applies Bayesian QBA.
+
+- [**Bayesian function/**](./Bayesian function/)
+  - [MyUnm_glm.R](./Bayesian function/MyUnm_glm.R): modified *unm_glm* function
+    from R package *unmconf* 1.0.0 for running Bayesian QBA
+
+## Further information
+
+This repository accompanies the paper:
+
+Emily Kawabata, Chin Yang Shapland, Tom Palmer, David Carslake, Kate Tilling,
+Rachael Hughes
+
+**A flexible Monte Carlo quantitative bias analysis for unmeasured confounding**
+
+Statistical Methods in Medical Research (accepted in 2026)
+
+See also:
+[https://www.medrxiv.org/content/10.1101/2025.08.12.25333217v1](https://www.medrxiv.org/content/10.1101/2025.08.12.25333217v1)
+
+If you would like any further information, please contact
+emily.kawabata@bristol.ac.uk.
