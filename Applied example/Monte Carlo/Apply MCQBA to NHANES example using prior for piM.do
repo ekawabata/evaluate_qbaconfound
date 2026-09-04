@@ -9,13 +9,17 @@ RETURNS:
 	DATASET CONTAINING RESULTS STORED BY POSTFILE; STORED UNDER FILENAME OF MACRO resultsfile
 *************************************************************************************************************************************************/
 * SET WORKING DIRECTORY
-* e.g., cd "C:\Github\Applied example\Monte Carlo\"
+* e.g., cd "C:\Github\Applied example\"
+
+version 18
 
 * DROP ALL SCALARS
 scalar drop _all
 
 /**********************************************
-        IMPORT NHANES DATASET
+*       IMPORT NHANES DATASET
+
+import delimited "Data\Data.csv", clear 
 
 /**********************************
   CONVERT INTO NUMERICAL VARIABLES
@@ -46,7 +50,7 @@ drop alcoholx-misreportingc
    MACROS AND TEMPORARY NAMES, FILES, AND VARIABLES
 ***************************************************/
 * NUMBER OF MONTE CARLO REPLICATIONS
-local numMCreps 10
+local numMCreps 10000
 
 tempname postname
 tempvar xb_utildeE sim_utildeE xb_utildeM pr_sim_utildeM sim_utildeM
@@ -113,9 +117,9 @@ foreach root of local list_roots {
 	local list_vars: list list_vars | vars_`root'
 	local list_posts: list list_posts | post_`root'
 }
-local vars_otherbp `"etaEstar alphaMstar_cons betastar_uconE betastar_ubinM"'
+local vars_otherbp `"etaEstar piMstar betastar_uconE betastar_ubinM"'
 local list_vars: list list_vars | vars_otherbp
-local post_otherbp `"(etaEstar) (alphaMstar_cons) (betastar_uconE) (betastar_ubinM)"'
+local post_otherbp `"(etaEstar) (piMstar) (betastar_uconE) (betastar_ubinM)"'
 local list_posts: list list_posts | post_otherbp
 * CHECK
 *noisily di "`list_vars'"
@@ -125,7 +129,8 @@ local list_posts: list list_posts | post_otherbp
    CODE TO APPLY THE MONTE CARLO QUANTITATIVE BIAS ANALYSIS
 *************************************************************/
 * SET UP DATASET TO STORE MONTE CARLO REPLICATIONS
-postfile `postname' MCQBArep analysis_rc analysis_eN `list_vars' using "mcqba_`numMCreps'reps_piM", replace
+local resultsfile `"Monte Carlo\mcqba_`numMCreps'reps_piM"'
+postfile `postname' MCQBArep analysis_rc analysis_eN `list_vars' using "`resultsfile'", replace
 
 set seed 1800
 
@@ -267,7 +272,7 @@ postclose `postname'			// CLOSES postfile STATEMENT AND SAVES DATASET
    SUMMARIZE MONTE CARLO EMPIRICAL DISTRIBUTION
 ***************************************************/
 * OPEN DATASET CONTAINING MONTE CARLO REPLICATIONS
-use "mcqba_10000reps_piM", clear
+use "`resultsfile'", clear
 
 * NO ERRORS REPORTED WHEN FITTING THE ANALYSIS MODEL
 tab analysis_rc, m

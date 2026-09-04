@@ -10,9 +10,9 @@ ARGUMENTS:
 RETURNS: 
 	A SINGLE SIMULATED DATASET CONTAINING Y, X, U, C							   
 ***************************************************************************************************************************************************/
-args samplesize strength_UC
+args samplesize strength_UC betaxbin
 
-noisily di "Simulate a dataset of sample size `samplesize' with `strength_UC' x U-C associations"
+noisily di "Simulate a dataset of sample size `samplesize' with true exposure effect of `betaxbin' and `strength_UC' x U-C and `strength_UC' x U1-U2 associations"
 
 * VALUES OF alpha0 SUCH THAT MEAN OF U = ~61.73
 if `strength_UC'==0 {
@@ -83,7 +83,6 @@ gen ucon1 = `alpha0' + `alphacnom1'*cnom1 + `alphacnom2'*cnom2 + `alphacbin'*cbi
 * BINARY OUTCOME ybin
 capture drop pr_ybin ybin
 local beta0 -2.370
-local betaxbin 0
 local betaccon -0.009095
 local betacbin -0.3559
 local betacnom1 0.1753

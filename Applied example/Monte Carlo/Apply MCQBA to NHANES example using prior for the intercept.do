@@ -9,13 +9,17 @@ RETURNS:
 	DATASET CONTAINING RESULTS STORED BY POSTFILE; STORED UNDER FILENAME OF MACRO resultsfile
 *************************************************************************************************************************************************/
 * SET WORKING DIRECTORY
-* e.g., cd "C:\Github\Applied example\Monte Carlo\"
+* e.g., cd "C:\Github\Applied example\"
+
+version 18
 
 * DROP ALL SCALARS
 scalar drop _all
 
 /**********************************************
         IMPORT NHANES DATASET
+
+import delimited "Data\Data.csv", clear 
 
 * EXPOSURE OF INTEREST
 encode alcoholx, gen(alcohol) 
@@ -122,7 +126,8 @@ local list_posts: list list_posts | post_otherbp
    CODE TO APPLY THE MONTE CARLO QUANTITATIVE BIAS ANALYSIS
 *************************************************************/
 * SET UP DATASET TO STORE MONTE CARLO REPLICATIONS
-postfile `postname' MCQBArep analysis_rc analysis_eN `list_vars' using "mcqba_`numMCreps'reps_intercept", replace
+local resultsfile `"Monte Carlo\mcqba_`numMCreps'reps_intercept"'
+postfile `postname' MCQBArep analysis_rc analysis_eN `list_vars' using "`resultsfile'", replace
 
 set seed 1521
 
@@ -212,7 +217,7 @@ postclose `postname'			// CLOSES postfile STATEMENT AND SAVES DATASET
    SUMMARIZE MONTE CARLO EMPIRICAL DISTRIBUTION
 ***************************************************/
 * OPEN DATASET CONTAINING MONTE CARLO REPLICATIONS
-use "mcqba_10000reps_intercept", clear
+use "`resultsfile'", clear
 
 * NO ERRORS REPORTED WHEN FITTING THE ANALYSIS MODEL
 tab analysis_rc, m

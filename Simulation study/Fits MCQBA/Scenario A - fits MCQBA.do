@@ -23,6 +23,8 @@ AUTHOR: RACHAEL HUGHES
 ***********************************************************************************************************************************/
 args exposurelist confounderlist alphax_hyperp eta_hyperp betau_hyperp numMCreps namepostdata uniform
 
+version 18
+
 noisily di "Exposure variable(s): `exposurelist'"
 noisily di "Measured confounder variable(s): `confounderlist'"
 noisily di "Conduct Monte Carlo QBA with `numMCreps' replications"

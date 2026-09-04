@@ -10,9 +10,9 @@ ARGUMENTS:
 RETURNS: 
 	A SINGLE SIMULATED DATASET CONTAINING Y, X, U, C							   
 *************************************************************************************************************************************************/
-args samplesize strength_UC
+args samplesize strength_UC betaxcon
 
-noisily di "Simulate a dataset of sample size `samplesize' with `strength_UC' x U-C and `strength_UC' x U1-U2 associations"
+noisily di "Simulate a dataset of sample size `samplesize' with true exposure effect of `betaxcon' and `strength_UC' x U-C and `strength_UC' x U1-U2 associations"
 
 clear
 set obs `samplesize'
@@ -89,7 +89,6 @@ gen ucon1 = mubar + sqrt(`epsilonsq')*rnormal()
 
 * CONTINUOUS OUTCOME ycon
 capture drop ycon
-local betaxcon 0
 local betaccon -0.1783
 local betacbin -0.2531		
 local betacnom1 0.5421      

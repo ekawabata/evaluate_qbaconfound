@@ -20,8 +20,9 @@ set rngstate XAA25ccbb62ac71b6a2e56c3180221d865d4411786c345737a83f42ed04e0696d9a
 local numsimdatasets 500
 local samplesize 1000
 local strength_UC 1
+local betaxbin 0
 forvalues dataset=1(1)`numsimdatasets' {
-	run "Data simulation\Scenario A - simulates a dataset.do" `samplesize' `strength_UC'
+	run "Data simulation\Scenario A - simulates a dataset.do" `samplesize' `strength_UC' `betaxbin'
 	
 	* DROP UNWANTED VARIABLES AND EXPORT SIMULATED DATASET
 	keep cnom cbin ccon xbin ucon1 ybin
@@ -40,8 +41,9 @@ set rngstate XAA000000000002e775392411f9e46eba928000e8c004ff39aca0c3d57db8c07599
 local numsimdatasets 500
 local samplesize 1000
 local strength_UC 1
+local betaxcon 0
 forvalues dataset=1(1)`numsimdatasets' {
-	run "Data simulation\Scenario B - simulates a dataset.do" `samplesize' `strength_UC'
+	run "Data simulation\Scenario B - simulates a dataset.do" `samplesize' `strength_UC' `betaxcon'
 		
 	* DROP UNWANTED VARIABLES AND EXPORT SIMULATED DATASET
 	keep cnom cbin ccon xcon ucon1 ucon2 ycon

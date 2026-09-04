@@ -15,11 +15,13 @@ RETURNS:
 	DATASET CONTAINING RESULTS STORED BY POSTFILE; STORED UNDER FILENAME OF MACRO resultsfile
 	STORED IN FOLDER "Results"
 ***********************************************************************************************************************************/
-args samplesize numsimdatasets numMCreps priorlevel uniform strength_UC
+args samplesize numsimdatasets numMCreps priorlevel uniform strength_UC betaxbin
 
 noisily di "Analysing `numsimdatasets' simulated datasets; each of `samplesize' observations"
 noisily di "Applying Monte Carlo QBA to generate a frequency distribution of `numMCreps' estimates"
 noisily di "Multiply the observed U-C associations by `strength_UC'"
+noisily di "True exposure effect is `betaxbin'"
+
 
 * DROP ALL SCALARS
 scalar drop _all
@@ -112,7 +114,7 @@ quietly {
 	local state = c(rngstate)
 	
 	* SIMULATE DATASET
-	run "Data simulation\Scenario A - simulates a dataset.do" `samplesize' `strength_UC'	
+	run "Data simulation\Scenario A - simulates a dataset.do" `samplesize' `strength_UC' `betaxbin'	
 	
 	* GENERATE DUMMY VARIABLES OF cnom FOR ANALYSIS
 	xi i.cnom
