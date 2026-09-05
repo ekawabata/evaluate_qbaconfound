@@ -119,7 +119,7 @@ The structure of the repository follows as:
       - [**Bayesian/**](./Simulation%20study/Simulation%20study%20I/Scenario%20A/Bayesian/)
         - [**Seeds/**](./Simulation%20study/Simulation%20study%20I/Scenario%20A/Bayesian/Seeds/)
           - [Generates random
-            integers.do](./Simulation%20study/Simulation%20study%20I/Scenario%20A/Bayesian/Seeds/Generates random integers.do):
+            integers.do](./Simulation%20study/Simulation%20study%20I/Scenario%20A/Bayesian/Seeds/Generates%20random%20integers.do):
             Generates 8,000 random integers for seeds.
           - [RandomIntegers.csv](./Simulation%20study/Simulation%20study%20I/Scenario%20A/Bayesian/Seeds/RandomIntegers.csv):
             Lists 8,000 random integers.
@@ -150,7 +150,7 @@ The structure of the repository follows as:
       - [**Bayesian/**](./Simulation%20study/Simulation%20study%20I/Scenario%20B/Bayesian)
         - [**Seeds/**](./Simulation%20study/Simulation%20study%20I/Scenario%20B/Bayesian/Seeds/)
           - [Generates random
-            integers.do](./Simulation%20study/Simulation%20study%20I/Scenario%20B/Bayesian/Seeds/Generates random integers.do):
+            integers.do](./Simulation%20study/Simulation%20study%20I/Scenario%20B/Bayesian/Seeds/Generates%20random%20integers.do):
             Generates 8,000 random integers for seeds.
           - [RandomIntegers.csv](./Simulation%20study/Simulation%20study%20I/Scenario%20B/Bayesian/Seeds/RandomIntegers.csv):
             Lists 8,000 random integers.
