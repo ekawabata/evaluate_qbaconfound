@@ -206,9 +206,9 @@ The structure of the repository follows as:
   - [**Simulation study V/**](./Simulation%20study/Simulation%20study%20V/)
     - [**Data**](./Simulation%20study/Simulation%20study%20V/Data/)
       - 500 dta files from
-        [Dataset_1.dta](./Simulation%20study/Simulation%20study%20V/Data/Dataset_1.dta)
+        [dataset_1.dta](./Simulation%20study/Simulation%20study%20V/Data/dataset_1.dta)
         to
-        [Dataset_500.dta](./Simulation%20study/Simulation%20study%20V/Data/Dataset_500.dta)
+        [dataset_500.dta](./Simulation%20study/Simulation%20study%20V/Data/dataset_500.dta)
         of the simulated datasets for scenarios A and B of simulation study V
     - [**Do files/**](./Simulation%20study/Simulation%20study%20V/Do%20files/)
       - [Scenario A - logit - runs sim study V for Monte Carlo
