@@ -61,7 +61,7 @@ The structure of the repository follows as:
       dataset.do](./Simulation%20study/Data%20simulation/Scenario%20F%20-%20simulates%20a%20dataset.do):
       Simulates a single dataset for scenario F of simulation study IV.
 
-  - [**Fits MCQBA/**](./Simulation%20study/Fits MCQBA/)
+  - [**Fits MCQBA/**](./Simulation%20study/Fits%20MCQBA/)
     - [Scenario A - fits
       MCQBA.do](./Simulation%20study/Fits%20MCQBA/Scenario%20A%20-%20fits%20MCQBA.do):
       Applies Monte Carlo QBA to data with a binary outcome and continuous
