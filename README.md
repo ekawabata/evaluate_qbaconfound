@@ -251,7 +251,8 @@ The structure of the repository follows as:
       Applies Monte Carlo QBA using inaccurate priors.
   - [**Bayesian/**](./Applied%20example/Bayesian/)
     - [ApplyBayesianQBAToNHANESExample.R](./Applied%20example/Bayesian/ApplyBayesianQBAToNHANESExample.R):
-      Applies Bayesian QBA.
+      Applies Bayesian QBA with a prior distribution for the intercept of
+      logistic regression.
 
 - [**Bayesian function/**](./Bayesian%20function/)
   - [MyUnm_glm.R](./Bayesian%20function/MyUnm_glm.R): modified *unm_glm*
