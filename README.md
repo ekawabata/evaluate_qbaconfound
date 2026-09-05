@@ -191,12 +191,14 @@ The structure of the repository follows as:
         [Dataset_500.csv](./Simulation%20study/Simulation%20study%20IV/Data/Dataset_500.csv)
         of the simulated datasets for scenario G of simulation study IV
     - [**Do files/**](./Simulation%20study/Simulation%20study%20IV/Do%20files/)
-      - [Scenario%20E%20-%20regress%20-%20runs%20sim%20study%20IV%20for%20Monte%20Carlo%20QBA.do](./Simulation%20study/Simulation%20study%20IV/Do%20files/Scenario%20E%20-%20regress%20-%20runs%20sim%20study%20IV%20for%20Monte%20Carlo%20QBA.do):
+      - [Scenario E - regress - runs sim study IV for Monte Carlo
+        QBA.do](./Simulation%20study/Simulation%20study%20IV/Do%20files/Scenario%20E%20-%20regress%20-%20runs%20sim%20study%20IV%20for%20Monte%20Carlo%20QBA.do):
         Runs scenario E of simulation study IV for Monte Carlo QBA.
       - [Scenario F - mlogit - runs sim study IV for Monte Carlo
-        QBA.do](./Simulation%20study/Simulation%20study%20IV/Do%20files/Scenario F - mlogit - runs sim study IV for Monte Carlo QBA.do):
+        QBA.do](./Simulation%20study/Simulation%20study%20IV/Do%20files/Scenario%20F%20-%20mlogit%20-%20runs%20sim%20study%20IV%20for%20Monte%20Carlo%20QBA.do):
         Runs scenario F of simulation study IV for Monte Carlo QBA.
-      - [Scenario%20G%20-%20Cox%20PH%20-%20runs%20sim%20study%20IV%20for%20Monte%20Carlo%20QBA.do](./Simulation%20study/Simulation%20study%20IV/Do%20files/Scenario%20G%20-%20Cox%20PH%20-%20runs%20sim%20study%20IV%20for%20Monte%20Carlo%20QBA.do):
+      - [Scenario G - Cox PH - runs sim study IV for Monte Carlo
+        QBA.do](./Simulation%20study/Simulation%20study%20IV/Do%20files/Scenario%20G%20-%20Cox%20PH%20-%20runs%20sim%20study%20IV%20for%20Monte%20Carlo%20QBA.do):
         Runs scenario G of simulation study IV for Monte Carlo QBA.
     - [**Results/**](./Simulation%20study/Simulation%20study%20IV/Results/)
       - empty folder to store the results from running the above do files
