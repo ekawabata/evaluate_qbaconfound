@@ -35,7 +35,7 @@ The structure of the repository follows as:
       IV.do](./Simulation%20study/Data%20simulation/Generates%20datasets%20for%20scenario%20G%20of%20simulation%20study%20IV.do):
       Generates 500 simulated datasets for scenario G of simulation study IV and
       saves in [Simulation study
-      IV/Data/](./Simulation%20study/Simulation%20study%20IV/Data/).
+      IV/yst_xcon/](./Simulation%20study/Simulation%20study%20IV/yst_xcon/).
 
     - [Scenario A - simulates a
       dataset.do](./Simulation%20study/Data%20simulation/Scenario%20A%20-%20simulates%20a%20dataset.do):
