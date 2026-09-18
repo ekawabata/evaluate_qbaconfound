@@ -264,9 +264,6 @@ Emily Kawabata, Chin Yang Shapland, Tom Palmer, David Carslake, Kate Tilling,
 Rachael Hughes. A flexible Monte Carlo quantitative bias analysis for unmeasured
 confounding. Statistical Methods in Medical Research (accepted in 2026).
 
-See also:
-[https://www.medrxiv.org/content/10.1101/2025.08.12.25333217v1](https://www.medrxiv.org/content/10.1101/2025.08.12.25333217v1)
-
 ## Further information
 
 If you would like any further information, please contact
