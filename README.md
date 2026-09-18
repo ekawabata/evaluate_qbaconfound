@@ -183,11 +183,11 @@ The structure of the repository follows as:
       - empty folder to store the results from running the above do files
 
   - [**Simulation study IV/**](./Simulation%20study/Simulation%20study%20IV/)
-    - [**Data/**](./Simulation%20study/Simulation%20study%20IV/Data/)
+    - [**yst_xcon/**](./Simulation%20study/Simulation%20study%20IV/yst_xcon/)
       - 500 csv files from
-        [Dataset_1.csv](./Simulation%20study/Simulation%20study%20IV/Data/Dataset_1.csv)
+        [Dataset_1.csv](./Simulation%20study/Simulation%20study%20IV/yst_xcon/Dataset_1.csv)
         to
-        [Dataset_500.csv](./Simulation%20study/Simulation%20study%20IV/Data/Dataset_500.csv)
+        [Dataset_500.csv](./Simulation%20study/Simulation%20study%20IV/yst_xcon/Dataset_500.csv)
         of the simulated datasets for scenario G of simulation study IV
     - [**Do files/**](./Simulation%20study/Simulation%20study%20IV/Do%20files/)
       - [Scenario E - regress - runs sim study IV for Monte Carlo
