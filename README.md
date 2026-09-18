@@ -16,8 +16,8 @@ The structure of the repository follows as:
 - [**Simulation study/**](./Simulation%20study/)
 
   - [Master do file for running Monte Carlo QBA in simulation studies I to
-    IV.do](./Simulation%20study/Master%20do%20file%20for%20running%20Monte%20Carlo%20QBA%20in%20simulation%20studies%20I%20to%20IV.do):
-    Master do file for running simulation studies I to IV for Monte Carlo QBA.
+    VI.do](./Simulation%20study/Master%20do%20file%20for%20running%20Monte%20Carlo%20QBA%20in%20simulation%20studies%20I%20to%20VI.do):
+    Master do file for running simulation studies I to VI for Monte Carlo QBA.
     Runs do files from folder "Do files" and post results to a folder called
     "Results".
 
@@ -105,8 +105,7 @@ The structure of the repository follows as:
           [Dataset_1.csv](./Simulation%20study/Simulation%20study%20I/Scenario%20A/Data/Dataset_1.csv)
           to
           [Dataset_500.csv](./Simulation%20study/Simulation%20study%20I/Scenario%20A/Data/Dataset_500.csv)
-          of the simulated datasets for scenario A of simulation studies I, II
-          and VI
+          of the simulated datasets for scenario A of simulation studies I, II, V and VI
       - [**Monte
         Carlo/**](./Simulation%20study/Simulation%20study%20I/Scenario%20A/Monte%20Carlo/)
         - [**Do
@@ -204,12 +203,6 @@ The structure of the repository follows as:
       - empty folder to store the results from running the above do files
 
   - [**Simulation study V/**](./Simulation%20study/Simulation%20study%20V/)
-    - [**Data**](./Simulation%20study/Simulation%20study%20V/Data/)
-      - 500 dta files from
-        [dataset_1.dta](./Simulation%20study/Simulation%20study%20V/Data/dataset_1.dta)
-        to
-        [dataset_500.dta](./Simulation%20study/Simulation%20study%20V/Data/dataset_500.dta)
-        of the simulated datasets for scenarios A and B of simulation study V
     - [**Do files/**](./Simulation%20study/Simulation%20study%20V/Do%20files/)
       - [Scenario A - logit - runs sim study V for Monte Carlo
         QBA.do](./Simulation%20study/Simulation%20study%20V/Do%20files/Scenario%20A%20-%20logit%20-%20runs%20sim%20study%20V%20for%20Monte%20Carlo%20QBA.do):
@@ -247,8 +240,8 @@ The structure of the repository follows as:
       Applies Monte Carlo QBA with a prior distribution for the intercept of
       logistic regression.
     - [Apply MCQBA to NHANES example using inaccurate
-      priors.do](./Applied%20example/Monte%20Carlo/Apply%20MCQBA%20to%20NHANES%20example%20using%20inaccurate%20priors.do):
-      Applies Monte Carlo QBA using inaccurate priors.
+      priors - piM.do](./Applied%20example/Monte%20Carlo/Apply%20MCQBA%20to%20NHANES%20example%20using%20inaccurate%20priors%20-%20piM.do):
+      Applies Monte Carlo QBA using inaccurate priors with a prior distribution for the marginal prevalence.
   - [**Bayesian/**](./Applied%20example/Bayesian/)
     - [ApplyBayesianQBAToNHANESExample.R](./Applied%20example/Bayesian/ApplyBayesianQBAToNHANESExample.R):
       Applies Bayesian QBA with a prior distribution for the intercept of
